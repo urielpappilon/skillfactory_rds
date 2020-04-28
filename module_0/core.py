@@ -36,20 +36,19 @@ def game_core_v3(number: int):
     Returns:
         int: the number of attempts that guessing took
     """
-    count = 0
-    # Given that number is from 1 to 100, so the interval length is 100
-    # we iterate until middle integer is not our number
+    count = 1
+    # Given that number is from 1 to 100
     low = 1
-    high = 101
-    lookup_range = 100
-    middle = lookup_range // 2
+    high = 100
+    # we iterate until middle integer is not our number
+    middle = (high+low) // 2
     while middle != number:
         # increasing attempt counter
         count += 1
         # since middle is not our number - adjusting boundaries
         if number > middle:
             low = middle + 1  # shifting lower boundary to the number is bigger than guess
-        elif number < middle:
+        else:
             high = middle - 1  # otherwise shifting higher boundary to the middle
         middle = (low + high) // 2  # finding new middle after adjusting boundaries
     return count
