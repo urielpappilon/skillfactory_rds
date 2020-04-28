@@ -13,8 +13,9 @@ def game_core_v1(number):
 
 
 def game_core_v2(number):
-    """Сначала устанавливаем любое random число, а потом уменьшаем или увеличиваем его в зависимости от того, больше оно или меньше нужного.
-       Функция принимает загаданное число и возвращает число попыток"""
+    """Сначала устанавливаем любое random число,
+     а потом уменьшаем или увеличиваем его в зависимости от того, больше оно или меньше нужного.
+     Функция принимает загаданное число и возвращает число попыток"""
     count = 1
     predict = np.random.randint(1, 101)
     while number != predict:
@@ -26,8 +27,15 @@ def game_core_v2(number):
     return count  # выход из цикла, если угадали
 
 
-def game_core_v3(number):
-    """Binary search core"""
+def game_core_v3(number: int):
+    """Binary search base game core
+
+    Args:
+        number: actual number that we want to guess
+
+    Returns:
+        int: the number of attempts that guessing took
+    """
     count = 0
     # Given that number is from 1 to 100, so the interval length is 100
     # we iterate until middle integer is not our number

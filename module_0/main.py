@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import numpy as np
 import core
 
@@ -14,5 +15,9 @@ def score_game(game_core):
     return score
 
 
-# running test
-score_game(core.game_core_v3)
+def main():
+    score_game(core.game_core_v3)
+
+
+if __name__ == '__main__':
+    main()
